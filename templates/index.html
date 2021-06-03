@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iris Classification Model</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body>
+    <h1>Predict the Specie</h1>
+
+    <form action="{{url_for('predict')}}" method="post">
+        <input type="text" name="SepalLengthCm" placeholder="SepalLengthCm" required="required" />
+        <input type="text" name="SepalWidthCm" placeholder="SepalWidthCm" required="required" />
+        <input type="text" name="PetalLengthCm" placeholder="PetalLengthCm" required="required" />
+        <input type="text" name="PetalWidthCm" placeholder="PetalWidthCm" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+    <br>
+    <br>
+
+    {{ prediction_text }}
+   
+</body>
+</html>
